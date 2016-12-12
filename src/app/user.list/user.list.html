@@ -1,0 +1,24 @@
+<div>
+  {{$ctrl.title}}
+</div>
+
+<table st-table="displayedCollection" st-safe-src="$ctrl.rowCollection" class="table table-striped">
+  <thead>
+    <tr>
+      <th st-sort="getters.firstName">first name</th>
+      <th st-sort="lastName">last name</th>
+      <th st-sort="birthDate">birth date</th>
+      <th st-sort="balance" st-skip-natural="true">balance</th>
+      <th>email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in displayedCollection">
+      <td>{{row.firstName | uppercase}}</td>
+      <td>{{row.lastName}}</td>
+      <td>{{row.birthDate | date}}</td>
+      <td>{{row.balance | currency}}</td>
+      <td>{{row.email}}</td>
+    </tr>
+  </tbody>
+</table>
