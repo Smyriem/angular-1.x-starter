@@ -6,8 +6,8 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log, $uiRouter) {
-    //window['ui-router-visualizer'].visualizer($uiRouter);
+  function runBlock($log, $window, $uiRouter) {
+    $window['ui-router-visualizer'].visualizer($uiRouter);
     $log.debug('runBlock end');
   }
 
